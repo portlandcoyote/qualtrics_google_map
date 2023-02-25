@@ -12,10 +12,6 @@
  * map's pin. It also includes the width and height of the map.
 
  * Modified by: Alec Moschetti 01/01/2023
- * Helpful links:
- * google maps docs: https://developers.google.com/maps/documentation
- * google maps API v3: https://developers.google.com/maps/documentation/javascript/reference
- * MapOptions interface: https://developers.google.com/maps/documentation/javascript/reference/map#MapOptions
  *************************************************************************************************/
 
 Qualtrics.SurveyEngine.addOnload(function() {
@@ -183,7 +179,7 @@ Qualtrics.SurveyEngine.addOnload(function() {
 					// The label shown for the autocomplete field
 					label: "Search for an address:",
 					// Styles for the label
-					labelCss: "margin: 4px auto; font-size: 16px; border: none",
+					labelCss: "margin: 4px auto; font-size: 16px; border: none; padding: 0;",
 					// Text to show if an invalid location is selected
 					invalidLocationAlertText:
 						"Please choose a location from the search dropdown. If your location doesn't appear in the search, enter a nearby location and move the marker to the correct location.",

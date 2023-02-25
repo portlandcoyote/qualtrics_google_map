@@ -6,24 +6,25 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 function _defineProperty(obj, key, value) { key = _toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _typeof(key) === "symbol" ? key : String(key); }
 function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
-/*
- * Modified from:
+/**************************************************************************************************
  * Qualtrics Google Map Lat/Long Collector
- *
+ * Modified from:
  * Written by George Walker <george@georgewwalker.com>
  * Get the latest from GitHub: https://github.com/pkmnct/qualtrics-google-map-lat-long/releases
- *
+
  * This JavaScript allows a Qualtrics user to collect a lat/long from a
  * Google Map in a survey. To use it, create a new "Text Entry" question,
  * then add this JavaScript to the question. You can set variables below.
  * These include the latitude and longitude to center the map at, the
  * zoom level of the map, and the text to display when hovering over the
  * map's pin. It also includes the width and height of the map.
- */
 
-/*
- *
- */
+ * Modified by: Alec Moschetti 01/01/2023
+ * Helpful links:
+ * google maps docs: https://developers.google.com/maps/documentation
+ * google maps API v3: https://developers.google.com/maps/documentation/javascript/reference
+ * MapOptions interface: https://developers.google.com/maps/documentation/javascript/reference/map#MapOptions
+ *************************************************************************************************/
 
 Qualtrics.SurveyEngine.addOnload(function () {
   var PREFERRED_ZOOM = 18;
@@ -42,10 +43,8 @@ Qualtrics.SurveyEngine.addOnload(function () {
     east: -121.5
   };
 
-  // Declare initMap function -
   // Inputs: The qualtrics survey quetion-id, question-container, and the google map instance
   // Outputs: Append a google map instance inside a qualtrics survey question through dom manipulation
-  //
   function initMap(id, container, map) {
     var dataBox = document.getElementById("QR~".concat(id));
     if (!dataBox) {
@@ -176,7 +175,7 @@ Qualtrics.SurveyEngine.addOnload(function () {
         // The label shown for the autocomplete field
         label: "Search for an address:",
         // Styles for the label
-        labelCss: "margin: 4px auto; font-size: 16px; border: none",
+        labelCss: "margin: 4px auto; font-size: 16px; border: none; padding: 0;",
         // Text to show if an invalid location is selected
         invalidLocationAlertText: "Please choose a location from the search dropdown. If your location doesn't appear in the search, enter a nearby location and move the marker to the correct location."
       }
@@ -186,9 +185,13 @@ Qualtrics.SurveyEngine.addOnload(function () {
   });
 });
 
-Qualtrics.SurveyEngine.addOnReady(function () {
-  /* Place your Javascript here to run when the page is ready */
-});
-Qualtrics.SurveyEngine.addOnUnload(function () {
-  /*Place your JavaScript here to run when the page is unloaded*/
-});
+// Other Qualtrics functions to use if needed:
+
+// Qualtrics.SurveyEngine.addOnReady(function() {
+// 	/* Place your Javascript here to run when the page is ready */
+// });
+//
+// Qualtrics.SurveyEngine.addOnUnload(function() {
+// 	/*Place your JavaScript here to run when the page is unloaded*/
+//
+// });
