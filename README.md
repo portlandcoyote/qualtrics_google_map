@@ -61,9 +61,7 @@ So far you should see something like this:
 
 ![Qualtrics survey page](images/qualtrics_map_question.png)
 
-Either click the </> JavaScript icon in the question behavior sidebar, or click the </> icon inside the question. A text editor will appear for you to paste the resulting output.js code into. It should look something like this:
-
-![Qualtrics interface gif](images/where_to_paste.mov)
+Either click the </> JavaScript icon in the question behavior sidebar, or click the </> icon inside the question. A text editor will appear for you to paste the resulting output.js code into.
 
 Ensure that the html header that Qualtrics is using has a valid google maps script and API key. You'll have to click on the Look and Feel icon (painter's brush) in the sidebar under the Survey tab. Following that you'll click on the General tab in the new sidebar that pops up.
 
